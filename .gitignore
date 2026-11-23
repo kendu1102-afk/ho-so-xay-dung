@@ -1,0 +1,24 @@
+# ============================================================
+# BẢO VỆ DỮ LIỆU: kho GitHub này đang CÔNG KHAI.
+# Chỉ đưa lên phần HỆ THỐNG (quy tắc, khuôn mẫu, lệnh, công cụ).
+# Dữ liệu thật của công ty / công trình KHÔNG được đưa lên.
+# Không xóa các dòng dưới khi kho còn công khai.
+# ============================================================
+KHO_HO_SO_XAY_DUNG/01_KHO_PHONG_CACH_CONG_TY/CONG_TY_*/
+KHO_HO_SO_XAY_DUNG/01_KHO_PHONG_CACH_CONG_TY/danh_ba_cong_ty.json
+KHO_HO_SO_XAY_DUNG/01_KHO_PHONG_CACH_CONG_TY/DANH_SACH_CONG_TY.md
+KHO_HO_SO_XAY_DUNG/02_TAI_LIEU_DAU_VAO/CONG_TY_*/
+KHO_HO_SO_XAY_DUNG/03_HO_SO_DANG_LAM/CONG_TY_*/
+KHO_HO_SO_XAY_DUNG/04_HO_SO_DA_XUAT/CONG_TY_*/
+KHO_HO_SO_XAY_DUNG/05_BAO_CAO_KIEM_TRA/*.md
+KHO_HO_SO_XAY_DUNG/06_BACKUP/*
+!KHO_HO_SO_XAY_DUNG/06_BACKUP/.gitkeep
+KHO_HO_SO_XAY_DUNG/07_CONG_TY_MOI/*
+!KHO_HO_SO_XAY_DUNG/07_CONG_TY_MOI/HUONG_DAN.md
+KHO_HO_SO_XAY_DUNG/09_NHAT_KY_HE_THONG/NHAT_KY.md
+KHO_HO_SO_XAY_DUNG/00_HE_THONG/_PHIEN_BAN/*
+!KHO_HO_SO_XAY_DUNG/00_HE_THONG/_PHIEN_BAN/.gitkeep
+.claude/skills/ho-so-xay-dung/kho_path.txt
+__pycache__/
+*.pyc
+~$*

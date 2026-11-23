@@ -1,0 +1,23 @@
+{
+  "_ghi_chu": "Danh sách cụm từ công cụ kiem_tra_ho_so.py sẽ cảnh báo. Có thể bổ sung. 'thay_bang' chỉ là gợi ý.",
+  "cum_tu": [
+    {"cum": "hàng đầu", "ly_do": "quảng cáo", "thay_bang": "bỏ"},
+    {"cum": "hiện đại bậc nhất", "ly_do": "quảng cáo", "thay_bang": "nêu tên, thông số thiết bị"},
+    {"cum": "tiên tiến nhất", "ly_do": "quảng cáo", "thay_bang": "bỏ"},
+    {"cum": "đảm bảo tuyệt đối", "ly_do": "khẳng định tuyệt đối", "thay_bang": "đáp ứng yêu cầu của … (nêu tiêu chí)"},
+    {"cum": "tuyệt đối an toàn", "ly_do": "khẳng định tuyệt đối", "thay_bang": "nêu biện pháp cụ thể"},
+    {"cum": "100% đạt", "ly_do": "khẳng định tuyệt đối", "thay_bang": "đạt yêu cầu theo …"},
+    {"cum": "một cách tốt nhất", "ly_do": "sáo rỗng", "thay_bang": "bỏ"},
+    {"cum": "một cách nghiêm túc", "ly_do": "sáo rỗng", "thay_bang": "bỏ"},
+    {"cum": "giàu kinh nghiệm", "ly_do": "quảng cáo", "thay_bang": "nêu chứng chỉ/số năm nếu có nguồn"},
+    {"cum": "đội ngũ hùng hậu", "ly_do": "quảng cáo", "thay_bang": "bỏ"},
+    {"cum": "uy tín", "ly_do": "quảng cáo", "thay_bang": "bỏ"},
+    {"cum": "tinh thần trách nhiệm cao", "ly_do": "sáo rỗng", "thay_bang": "nêu trách nhiệm cụ thể"},
+    {"cum": "chất lượng cao nhất", "ly_do": "khẳng định tuyệt đối", "thay_bang": "chất lượng theo yêu cầu thiết kế"},
+    {"cum": "không bao giờ", "ly_do": "khẳng định tuyệt đối", "thay_bang": "không"},
+    {"cum": "luôn luôn", "ly_do": "thừa", "thay_bang": "bỏ hoặc 'thường xuyên'"},
+    {"cum": "vô cùng", "ly_do": "cảm tính", "thay_bang": "bỏ"},
+    {"cum": "hết sức", "ly_do": "cảm tính", "thay_bang": "bỏ"},
+    {"cum": "lorem", "ly_do": "chữ giả", "thay_bang": "nội dung thật"}
+  ]
+}
