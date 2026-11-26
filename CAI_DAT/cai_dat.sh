@@ -36,6 +36,9 @@ else
   [[ $DA_CO == 1 ]] && echo "Kho đã tồn tại → chỉ bổ sung file còn thiếu." || echo "Đã tạo kho mới."
 fi
 
+for d in 00_HE_THONG 01_KHO_PHONG_CACH_CONG_TY 02_TAI_LIEU_DAU_VAO 03_HO_SO_DANG_LAM 04_HO_SO_DA_XUAT 05_BAO_CAO_KIEM_TRA 06_BACKUP 07_CONG_TY_MOI 08_QUY_TAC_CHUNG 09_NHAT_KY_HE_THONG; do
+  mkdir -p "$KHO/$d"
+done
 mkdir -p "$CLAUDE_DIR/skills"
 if [[ -e "$DICH_LENH" ]]; then
   mkdir -p "$CLAUDE_DIR/ho-so-xay-dung_backup"

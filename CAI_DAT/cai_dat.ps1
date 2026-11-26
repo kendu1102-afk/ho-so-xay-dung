@@ -12,6 +12,7 @@ $NguonLenh = Join-Path $Goc ".claude\skills\ho-so-xay-dung"
 $ThuMucClaude = Join-Path $env:USERPROFILE ".claude"
 $DichLenh = Join-Path $ThuMucClaude "skills\ho-so-xay-dung"
 $Gio = Get-Date -Format "yyyyMMdd_HHmmss"
+try { [Console]::OutputEncoding = [Text.Encoding]::UTF8; $OutputEncoding = [Text.Encoding]::UTF8 } catch {}
 
 function Ghi($t) { Write-Host $t }
 function ThuGhi($thuMuc) {
@@ -41,6 +42,9 @@ $daCo = Test-Path (Join-Path $Kho "00_HE_THONG\SIEU_LENH_CHINH.md")
 New-Item -ItemType Directory -Force -Path $Kho | Out-Null
 robocopy "$NguonKho" "$Kho" /E /XC /XN /XO /XF .gitkeep /XD __pycache__ /NFL /NDL /NJH /NJS /NP | Out-Null
 if ($LASTEXITCODE -ge 8) { throw "Loi khi chep kho (robocopy ma $LASTEXITCODE)." }
+foreach ($d in @("00_HE_THONG","01_KHO_PHONG_CACH_CONG_TY","02_TAI_LIEU_DAU_VAO","03_HO_SO_DANG_LAM","04_HO_SO_DA_XUAT","05_BAO_CAO_KIEM_TRA","06_BACKUP","07_CONG_TY_MOI","08_QUY_TAC_CHUNG","09_NHAT_KY_HE_THONG")) {
+    New-Item -ItemType Directory -Force -Path (Join-Path $Kho $d) | Out-Null
+}
 if ($daCo) { Ghi "Kho da ton tai -> chi bo sung file con thieu, KHONG ghi de file cu." } else { Ghi "Da tao kho moi." }
 
 # 3. Cai lenh /ho-so-xay-dung (toan may)
@@ -73,8 +77,18 @@ if ($py) {
     Ghi ""
     Ghi "--- Kiem tra cau truc kho ---"
     & $py[0] @args0 $kp kiem-tra
-    & $py[0] @args0 -c "import docx" 2>$null
-    if ($LASTEXITCODE -ne 0) { Ghi "Chua co thu vien xuat Word (python-docx). Claude se xin phep cai khi can, hoac tu chay: py -m pip install python-docx" }
+    $ErrorActionPreference = "Continue"
+    & $py[0] @args0 -c "import docx" 2>&1 | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        Ghi ""
+        Ghi "May chua co thu vien xuat file Word (python-docx)."
+        $tl = Read-Host "Cai thu vien nay ngay bay gio? Go Y roi Enter de cai, hoac N de bo qua"
+        if ($tl -match '^[Yy]') {
+            & $py[0] @args0 -m pip install python-docx
+            & $py[0] @args0 -c "import docx" 2>&1 | Out-Null
+            if ($LASTEXITCODE -eq 0) { Ghi "Da cai xong thu vien xuat Word." } else { Ghi "Cai chua thanh cong. Co the cai sau bang lenh: py -m pip install python-docx" }
+        } else { Ghi "Da bo qua. Muon cai sau, chay lenh: py -m pip install python-docx" }
+    }
 } else {
     Ghi "CHUA CO PYTHON. Hay cai Python 3 tai https://www.python.org/downloads/ (tich 'Add Python to PATH'), sau do mo lai Claude Code."
 }
